@@ -1,104 +1,173 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <title>Environmental Health Research Group</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header class="site-header">
+    <!-- Hidden H1 for accessibility/SEO -->
+    <h1 class="visually-hidden">Environmental Health Research Group</h1>
 
-<header>
-  <h1>Environmental Health Research Group</h1>
-  <p>Department of Water Resources and Environmental Modeling</p>
-</header>
+    <!-- Logo: place your file at assets/images/logo.jpg -->
+    <img class="site-logo" src="assets/images/logo.jpg" alt="Environmental Health Research Group logo" onerror="this.style.display='none'">
 
-<nav>
-  <button class="tab active" onclick="openTab('about')">About</button>
-  <button class="tab" onclick="openTab('team')">Team</button>
-  <button class="tab" onclick="openTab('projects')">Projects</button>
-  <button class="tab" onclick="openTab('publications')">Publications</button>
-  <button class="tab" onclick="openTab('teaching')">Teaching</button>
-</nav>
+    <p class="lead">Department of Water Resources and Environmental Modeling</p>
+  </header>
 
-<main>
+  <nav class="site-nav" role="tablist" aria-label="Main">
+    <button class="tab active" role="tab" aria-selected="true" aria-controls="about" onclick="openTab('about', event)">About</button>
+    <button class="tab" role="tab" aria-controls="team" onclick="openTab('team', event)">Team</button>
+    <button class="tab" role="tab" aria-controls="projects" onclick="openTab('projects', event)">Projects</button>
+    <button class="tab" role="tab" aria-controls="publications" onclick="openTab('publications', event)">Publications</button>
+    <button class="tab" role="tab" aria-controls="teaching" onclick="openTab('teaching', event)">Teaching</button>
+  </nav>
 
-<section id="about" class="tab-content active">
-  <h2>About Us</h2>
-  <p>
-    We study how climate and weather affect human health, with a focus on
-    temperature extremes, air pollution, and other environmental stressors.
-    Our research lies at the intersection of epidemiology, human biometeorology,
-    and data science, with particular attention to urban populations and
-    climate change.
-  </p>
+  <main>
+    <section id="about" class="tab-content active" role="tabpanel" aria-hidden="false">
+      <h2>About Us</h2>
+      <p>
+        We study how climate and weather affect human health, focusing on temperature extremes,
+        air pollution, and other environmental stressors at the intersection of epidemiology,
+        biometeorology, and data science.
+      </p>
 
-  <h3>Research Focus</h3>
-  <ul>
-    <li>Climate change, temperature extremes, and mortality</li>
-    <li>Predictive models for future health risks</li>
-    <li>Adaptation strategies and public health policy</li>
-  </ul>
-</section>
+      <h3>Research Focus</h3>
+      <ul>
+        <li>Climate change, temperature extremes, and mortality</li>
+        <li>Predictive models for future health risks</li>
+        <li>Adaptation strategies and public health policy</li>
+      </ul>
+    </section>
 
-<section id="team" class="tab-content">
-  <h2>Team</h2>
+    <section id="team" class="tab-content" role="tabpanel" aria-hidden="true" hidden>
+      <h2>Team</h2>
 
-  <h3>Team Leader</h3>
-  <p><strong>Dr. Aleš Urban</strong><br>
-  Human biometeorology and environmental epidemiology<br>
-  <a href="https://orcid.org/0000-0003-4608-3553" target="_blank">ORCID</a>
-  </p>
+      <!-- Leader category: uses #leader-category so CSS will keep the leader column width consistent -->
+      <div id="leader-category" class="team-category" aria-label="Team leader">
+        <h3 class="category-title">Team Leader</h3>
+        <div class="team-grid">
+          <article class="team-card">
+            <div class="team-photo avatar" data-name="Dr. Aleš Urban" aria-hidden="false"></div>
+            <div class="team-body">
+              <h3 class="team-name">Dr. Aleš Urban</h3>
+              <div class="team-role">Team Leader — Human biometeorology &amp; environmental epidemiology</div>
+              <p class="team-bio"><a href="https://orcid.org/0000-0003-4608-3553" target="_blank" rel="noopener">ORCID</a></p>
+            </div>
+          </article>
+        </div>
+      </div>
 
-  <h3>Postdoctoral Researchers</h3>
-  <ul>
-    <li>Consuelo Quispe Haro</li>
-    <li>Saumya Singh</li>
-    <li>Tugba Dogan</li>
-  </ul>
+      <!-- Postdocs -->
+      <div class="team-category" aria-label="Postdoctoral researchers">
+        <h3 class="category-title">Postdoctoral Researchers</h3>
+        <div class="team-grid">
+          <article class="team-card">
+            <div class="team-photo avatar" data-name="Consuelo Quispe Haro"></div>
+            <div class="team-body">
+              <h3 class="team-name">Consuelo Quispe Haro</h3>
+              <div class="team-role">Postdoctoral Researcher</div>
+            </div>
+          </article>
 
-  <h3>PhD Students</h3>
-  <ul>
-    <li>Ekaterina Borisova</li>
-    <li>Falak Naz</li>
-    <li>Sonjib Chakraborty</li>
-    <li>Mahulena Kořistková</li>
-  </ul>
+          <article class="team-card">
+            <div class="team-photo avatar" data-name="Saumya Singh"></div>
+            <div class="team-body">
+              <h3 class="team-name">Saumya Singh</h3>
+              <div class="team-role">Postdoctoral Researcher</div>
+            </div>
+          </article>
 
-  <h3>Collaborators</h3>
-  <p>National and international collaborators across Europe and beyond.</p>
-</section>
+          <article class="team-card">
+            <div class="team-photo avatar" data-name="Tugba Dogan"></div>
+            <div class="team-body">
+              <h3 class="team-name">Tugba Dogan</h3>
+              <div class="team-role">Postdoctoral Researcher</div>
+            </div>
+          </article>
+        </div>
+      </div>
 
-<section id="projects" class="tab-content">
-  <h2>Projects</h2>
-  <ul>
-    <li>CLARA (ERC_CZ)</li>
-    <li>CrossEU (Horizon Europe)</li>
-    <li>GAČR 25-17587S</li>
-  </ul>
-</section>
+      <!-- PhD students -->
+      <div class="team-category" aria-label="PhD students">
+        <h3 class="category-title">PhD Students</h3>
+        <div class="team-grid">
+          <article class="team-card">
+            <div class="team-photo avatar" data-name="Ekaterina Borisova"></div>
+            <div class="team-body">
+              <h3 class="team-name">Ekaterina Borisova</h3>
+              <div class="team-role">PhD Student</div>
+            </div>
+          </article>
 
-<section id="publications" class="tab-content">
-  <h2>Publications</h2>
-  <p>
-    Selected peer-reviewed publications will be listed here.
-    (Can be linked to ORCID, Google Scholar, or PubMed later.)
-  </p>
-</section>
+          <article class="team-card">
+            <div class="team-photo avatar" data-name="Falak Naz"></div>
+            <div class="team-body">
+              <h3 class="team-name">Falak Naz</h3>
+              <div class="team-role">PhD Student</div>
+            </div>
+          </article>
 
-<section id="teaching" class="tab-content">
-  <h2>Teaching</h2>
-  <p>
-    <strong>Methods in Environmental Epidemiology</strong><br>
-    Faculty of Environmental Sciences, CZU Prague
-  </p>
-</section>
+          <article class="team-card">
+            <div class="team-photo avatar" data-name="Sonjib Chakraborty"></div>
+            <div class="team-body">
+              <h3 class="team-name">Sonjib Chakraborty</h3>
+              <div class="team-role">PhD Student</div>
+            </div>
+          </article>
 
-</main>
+          <article class="team-card">
+            <div class="team-photo avatar" data-name="Mahulena Kořistková"></div>
+            <div class="team-body">
+              <h3 class="team-name">Mahulena Kořistková</h3>
+              <div class="team-role">PhD Student</div>
+            </div>
+          </article>
+        </div>
+      </div>
 
-<footer>
-  <p>© Environmental Health Research Group</p>
-</footer>
+      <!-- Collaborators -->
+      <div class="team-category" aria-label="Collaborators">
+        <h3 class="category-title">Collaborators</h3>
+        <div class="team-grid">
+          <article class="team-card">
+            <div class="team-photo avatar" data-name="Collaborators"></div>
+            <div class="team-body">
+              <h3 class="team-name">Collaborators</h3>
+              <div class="team-role">National &amp; international collaborators</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<script src="script.js"></script>
+    <section id="projects" class="tab-content" role="tabpanel" aria-hidden="true" hidden>
+      <h2>Projects</h2>
+      <ul>
+        <li>CLARA (ERC_CZ)</li>
+        <li>CrossEU (Horizon Europe)</li>
+        <li>GAČR 25-17587S</li>
+      </ul>
+    </section>
+
+    <section id="publications" class="tab-content" role="tabpanel" aria-hidden="true" hidden>
+      <h2>Publications</h2>
+      <p>Selected peer-reviewed publications will be listed here.</p>
+    </section>
+
+    <section id="teaching" class="tab-content" role="tabpanel" aria-hidden="true" hidden>
+      <h2>Teaching</h2>
+      <p><strong>Methods in Environmental Epidemiology</strong><br>Faculty of Environmental Sciences, CZU Prague</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© Environmental Health Research Group <span id="year"></span></p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
